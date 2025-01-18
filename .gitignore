@@ -1,0 +1,40 @@
+# Virtual environments
+.venv/
+venv/
+
+# Environment files
+.env
+.env.test
+
+# Cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Test results
+test_results*.json
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+
+# test files
+tests/
+pytest.ini
+requirements-test.txt
+
+# api doc
+api_doc.md
+
+#references code 
+test-go/
+
+# scripts
+scripts/
+
+demo.ipynb
