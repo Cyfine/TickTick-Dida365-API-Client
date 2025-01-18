@@ -30,4 +30,3 @@ requirements-test.txt
 api_doc.md
 test-go/
 scripts/
-demo.ipynb
