@@ -23,18 +23,11 @@ build/
 .vscode/
 .idea/
 
-# test files
+# Development files
 tests/
 pytest.ini
 requirements-test.txt
-
-# api doc
 api_doc.md
-
-#references code 
 test-go/
-
-# scripts
 scripts/
-
 demo.ipynb

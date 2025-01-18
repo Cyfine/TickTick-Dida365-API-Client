@@ -9,6 +9,31 @@ This is a package created to facilitate task management automation. It is not af
 - Dida365 API: https://developer.dida365.com/api#/openapi
 - TickTick API: https://developer.ticktick.com/docs#/openapi
 
+## OAuth2 Setup
+
+1. Get your OAuth2 credentials:
+   - For TickTick: Visit https://developer.ticktick.com/manage
+   - For Dida365: Visit https://developer.dida365.com/manage
+   - Click "New App" to create a new application
+   - After creation, you'll receive your Client ID and Client Secret
+
+2. Configure OAuth2 redirect URL:
+   - In your Manage App page, click "Edit" of your newly created app
+   - Add the redirect URL: `http://localhost:8080/callback` at "OAuth redirect URL"
+   - Save the changes
+   - Note: If you want to use a different redirect URL, make sure to update it in both:
+     - The app settings on TickTick/Dida365 developer portal
+     - Your .env file (see below)
+
+3. Configure your credentials:
+   ```bash
+   # .env file
+   DIDA365_CLIENT_ID=your_client_id        # From step 1
+   DIDA365_CLIENT_SECRET=your_client_secret # From step 1
+   DIDA365_REDIRECT_URI=http://localhost:8080/callback  # From step 2
+   DIDA365_SERVICE_TYPE=ticktick  # or dida365
+   ```
+
 ## Features
 
 - ✨ Full async support using `httpx`
@@ -35,14 +60,22 @@ from dida365 import Dida365Client, ServiceType, TaskCreate, ProjectCreate, TaskP
 
 async def main():
     # Initialize client (credentials can also be loaded from .env file)
-    client = Dida365Client()
+    client = Dida365Client(
+        client_id="your_client_id",  # Optional if in .env
+        client_secret="your_client_secret",  # Optional if in .env
+        service_type=ServiceType.TICKTICK,  # or DIDA365
+        redirect_uri="http://localhost:8080/callback",  # Optional
+        save_to_env=True  # Automatically save credentials and tokens to .env
+    )
 
-    # If you have a token in .env, it will be loaded automatically
-    # Otherwise, complete the OAuth2 flow:
+    # First-time authentication:
     if not client.auth.token:
+        # This will start a local server at the redirect_uri
+        # and open your browser for authorization
         await client.authenticate()
+        # Token will be automatically saved to .env if save_to_env=True
 
-    # Create a project first
+    # Create a project
     project = await client.create_project(
         ProjectCreate(
             name="My Project",
@@ -50,7 +83,7 @@ async def main():
         )
     )
 
-    # Create a new task in the project
+    # Create a task
     task = await client.create_task(
         TaskCreate(
             project_id=project.id,

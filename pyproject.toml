@@ -81,3 +81,9 @@ pool = 5.0      # Pool timeout
 
 # Request configuration
 max_retries = 3  # Maximum number of retries for failed requests 
+
+[project.urls]
+Homepage = "https://github.com/Cyfine/TicTick-Dida365-API-Client"
+Documentation = "https://github.com/Cyfine/TicTick-Dida365-API-Client#readme"
+"Bug Tracker" = "https://github.com/Cyfine/TicTick-Dida365-API-Client/issues"
+Changelog = "https://github.com/Cyfine/TicTick-Dida365-API-Client/blob/main/CHANGELOG.md" 
