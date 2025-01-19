@@ -1,6 +1,7 @@
 site_name: Dida365/TickTick API Client
 site_description: Python client library for Dida365/TickTick API
 site_author: Carter Yifeng Cheng
+site_url: https://cyfine.github.io/TickTick-Dida365-API-Client/
 repo_url: https://github.com/Cyfine/TickTick-Dida365-API-Client
 
 theme:

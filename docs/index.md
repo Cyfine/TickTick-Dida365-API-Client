@@ -4,7 +4,6 @@ Welcome to the documentation for the Dida365/TickTick API Client. This Python pa
 
 ## Quick Navigation
 
-- [Getting Started](guides/quickstart.md) - Set up and start using the client
 - [Authentication](guides/authentication.md) - Configure OAuth2 authentication
 - [Projects Guide](guides/projects.md) - Working with projects
 - [Tasks Guide](guides/tasks.md) - Managing tasks
