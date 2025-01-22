@@ -49,7 +49,7 @@ class ChecklistItem(BaseApiModel, SortableMixin):
 class TaskBase(BaseApiModel, SortableMixin):
     """Base model for task data."""
 
-    title: str = Field(..., description="Task title")
+    title: Optional[str] = Field(None, description="Task title")
     content: Optional[str] = Field(None, description="Task content")
     desc: Optional[str] = Field(None, description="Task description")
     is_all_day: bool = Field(default=False, description="Whether the task is all-day")
@@ -73,23 +73,50 @@ class TaskBase(BaseApiModel, SortableMixin):
 
 
 class TaskCreate(TaskBase):
-    """Model for creating a new task."""
+    """Model for creating a new task.
+    
+    Example:
+        ```python
+        task = TaskCreate(
+            title="My Task",  # Required
+            project_id="project123",  # Required
+            content="Task details",
+            priority=TaskPriority.HIGH
+        )
+        ```
+    """
 
+    title: str = Field(..., description="Task title")  # Override to make required
     project_id: str = Field(..., description="Project identifier")
 
 
 class TaskUpdate(TaskBase):
-    """Model for updating an existing task."""
+    """Model for updating an existing task.
+    
+    Example:
+        ```python
+        update = TaskUpdate(
+            id="task123",
+            project_id="project123",
+            title="Updated Title",  # Optional
+            priority=TaskPriority.LOW
+        )
+        ```
+    """
 
     id: str = Field(..., description="Task identifier")
     project_id: str = Field(..., description="Project identifier")
 
 
 class Task(TaskBase, TimestampMixin):
-    """Model for a complete task."""
+    """Model for a complete task.
+    
+    Includes all task data including system fields like ID and timestamps.
+    """
 
     id: str = Field(..., description="Task identifier")
     project_id: str = Field(..., description="Project identifier")
+    title: str = Field(..., description="Task title")  # Override to make required
     status: TaskStatus = Field(
         default=TaskStatus.NORMAL,
         description="Task status"
