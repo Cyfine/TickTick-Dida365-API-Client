@@ -20,7 +20,7 @@ class Dida365Client:
         self,
         client_id: Optional[str] = None,
         client_secret: Optional[str] = None,
-        service_type: ServiceType = ServiceType.DIDA365,
+        service_type: ServiceType = None,
         redirect_uri: str = "http://localhost:8080/callback",
         save_to_env: bool = True
     ):

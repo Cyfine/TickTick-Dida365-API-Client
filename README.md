@@ -1,8 +1,11 @@
 # Dida365/TickTick API Client
+[![Documentation](https://img.shields.io/badge/docs-click%20here-blue)](https://cyfine.github.io/TickTick-Dida365-API-Client/)
 
 An unofficial Python client library for the Dida365/TickTick API, supporting both the Chinese (Dida365) and international (TickTick) versions of the service. Built with modern async Python and robust error handling.
 
 This is a package created to facilitate task management automation. It is not affiliated with or endorsed by Dida365 or TickTick.
+
+Project documentation is available [here](https://cyfine.github.io/TickTick-Dida365-API-Client/)
 
 ## API Documentation References
 
@@ -222,7 +225,7 @@ DIDA365_CLIENT_ID=your_client_id
 DIDA365_CLIENT_SECRET=your_client_secret
 
 # Optional configurations
-DIDA365_SERVICE_TYPE=ticktick     # or dida365 (default)
+DIDA365_SERVICE_TYPE=ticktick     # or dida365 
 DIDA365_ACCESS_TOKEN=your_token   # Will be saved automatically after auth
 DIDA365_BASE_URL=custom_url      # Optional: custom API endpoint
 DIDA365_LOG_LEVEL=INFO          # Optional: DEBUG, INFO, WARNING, ERROR

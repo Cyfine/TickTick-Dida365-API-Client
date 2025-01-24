@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "dida365"
-version = "0.1.6"
+version = "0.1.7"
 description = "Unofficial Python client for Dida365/TickTick API - Community-maintained package for task automation"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -60,7 +60,7 @@ multi_line_output = 3
 env_prefix = "DIDA365_"
 
 # Default service type (dida365 or ticktick)
-default_service = "dida365"
+default_service = "ticktick"
 
 # Token storage location
 token_file = ".dida365_token.json"

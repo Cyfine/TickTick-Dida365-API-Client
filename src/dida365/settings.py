@@ -11,7 +11,7 @@ from .config import ServiceType
 from .logger import setup_logging
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv(override=True)
 
 
 def load_pyproject_settings() -> dict:
@@ -68,6 +68,7 @@ class Settings(BaseSettings):
         description="Service type (dida365 or ticktick)", 
         validation_alias=f"{ENV_PREFIX}SERVICE_TYPE",
     )
+ 
     custom_base_url: Optional[str] = Field(
         default=None,
         description="Custom API base URL",
