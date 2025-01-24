@@ -28,7 +28,7 @@ from .models.task import (
     TaskUpdate,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.1.8"
 __all__ = [
     # Main client
     "Dida365Client",

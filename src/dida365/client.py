@@ -46,7 +46,7 @@ class Dida365Client:
                 "or environment variables (DIDA365_CLIENT_ID, DIDA365_CLIENT_SECRET)"
             )
         
-        self.config = ApiConfig(service_type=service_type)
+        self.config = ApiConfig(service_type=self.service_type)
         self.auth = OAuth2Manager(
             client_id=self.client_id,
             client_secret=self.client_secret,
