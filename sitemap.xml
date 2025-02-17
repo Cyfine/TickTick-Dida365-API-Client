@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://cyfine.github.io/TickTick-Dida365-API-Client/</loc>
+         <lastmod>2025-02-17</lastmod>
+    </url>
+    <url>
+         <loc>https://cyfine.github.io/TickTick-Dida365-API-Client/api/client/</loc>
+         <lastmod>2025-02-17</lastmod>
+    </url>
+    <url>
+         <loc>https://cyfine.github.io/TickTick-Dida365-API-Client/api/exceptions/</loc>
+         <lastmod>2025-02-17</lastmod>
+    </url>
+    <url>
+         <loc>https://cyfine.github.io/TickTick-Dida365-API-Client/api/models/</loc>
+         <lastmod>2025-02-17</lastmod>
+    </url>
+    <url>
+         <loc>https://cyfine.github.io/TickTick-Dida365-API-Client/guides/authentication/</loc>
+         <lastmod>2025-02-17</lastmod>
+    </url>
+    <url>
+         <loc>https://cyfine.github.io/TickTick-Dida365-API-Client/guides/projects/</loc>
+         <lastmod>2025-02-17</lastmod>
+    </url>
+    <url>
+         <loc>https://cyfine.github.io/TickTick-Dida365-API-Client/guides/tasks/</loc>
+         <lastmod>2025-02-17</lastmod>
+    </url>
+</urlset>
