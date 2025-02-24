@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.1.9] - 2024-01-24
+
+### Added
+- Added support for "#transparent" as a valid project color value to remove project color
+- Updated project color validation error messages to be more descriptive
+- Enhanced project color documentation with transparent color option
+
 ## [0.1.8] - 2024-01-24
 
 ### Fixed

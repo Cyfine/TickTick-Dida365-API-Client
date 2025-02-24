@@ -115,7 +115,8 @@ class ProjectBase(BaseApiModel, SortableMixin):
         if not ((len(v) == 7 and all(c in "0123456789ABCDEFabcdef#" for c in v)) or v == '#transparent'):
             raise ValueError(
                 f"Invalid color hex code '{v}'. "
-                "Must be a 6-digit hex code with optional '#' prefix (e.g., '#FF0000' or 'FF0000')"
+                "Must be either a 6-digit hex code with optional '#' prefix (e.g., '#FF0000' or 'FF0000') "
+                "or '#transparent' for no color"
             )
         
         return v

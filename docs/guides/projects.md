@@ -12,7 +12,7 @@ from dida365 import ProjectCreate, ViewMode, ProjectKind
 
 project = ProjectCreate(
     name="My Project",              # Required: Project name
-    color="#FF0000",               # Optional: Hex color code
+    color="#FF0000",               # Optional: Hex color code or "#transparent" for no color
     view_mode=ViewMode.KANBAN,     # Optional: LIST, KANBAN, TIMELINE
     kind=ProjectKind.TASK          # Optional: TASK, NOTE
 )
@@ -27,7 +27,7 @@ from dida365 import ProjectUpdate
 update = ProjectUpdate(
     id="project_id",              # Required: Project ID
     name="Updated Name",          # Optional: New name
-    color="#00FF00",             # Optional: New color
+    color="#transparent",         # Optional: New color (use "#transparent" to remove color)
     view_mode=ViewMode.LIST,     # Optional: New view mode
     kind=ProjectKind.TASK        # Optional: New kind
 )
@@ -47,7 +47,7 @@ project = await client.create_project(
 project = await client.create_project(
     ProjectCreate(
         name="Detailed Project",
-        color="#FF0000",
+        color="#FF0000",  # Or use "#transparent" for no color
         view_mode=ViewMode.KANBAN,
         kind=ProjectKind.TASK
     )
@@ -92,7 +92,7 @@ updated = await client.update_project(
     ProjectUpdate(
         id="project_id",
         name="Updated Project",
-        color="#00FF00",
+        color="#00FF00",  # Or use "#transparent" to remove color
         view_mode=ViewMode.TIMELINE,
         kind=ProjectKind.TASK
     )
@@ -111,7 +111,7 @@ await client.delete_project("project_id")
 |----------|------|----------|-------------|
 | `id` | str | Yes (update) | Project identifier |
 | `name` | str | Yes (create) | Project name |
-| `color` | str | No | Hex color code (e.g., "#FF0000") |
+| `color` | str | No | Hex color code (e.g., "#FF0000") or "#transparent" for no color |
 | `view_mode` | ViewMode | No | View mode (LIST, KANBAN, TIMELINE) |
 | `kind` | ProjectKind | No | Project kind (TASK, NOTE) |
 | `closed` | bool | No | Whether project is closed |
@@ -170,7 +170,7 @@ async def manage_projects():
     project = await client.create_project(
         ProjectCreate(
             name="My Project",
-            color="#FF0000",
+            color="#FF0000",  # Or use "#transparent" for no color
             view_mode=ViewMode.KANBAN
         )
     )
